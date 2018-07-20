@@ -36,16 +36,23 @@ span {
     display: inline-block;
 }
 
+$pc: 1000px;
 $sp: 768px;
+@mixin pc {
+  @media screen and (max-width: ($pc)) {
+    @content;
+  }
+}
 @mixin sp {
     @media screen and (max-width: ($sp)) {
       @content;
     }
 }
 
-.mt64 {
-    margin-top: 64px;
-}
+
+$base-blue: #2D6199;
+$base-yellow: #FFF57F;
+
 .cf:after {
     content:" ";
     display:block;
@@ -60,4 +67,97 @@ body {
 	font-family: -apple-system, "Helvetica Neue", "Hiragino Kaku Gothic ProN", "游ゴシック Medium", "メイリオ", meiryo, sans-serif;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
+}
+.wrapper {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+h3 {
+  font-size: 30px;
+  color: $base-blue;
+  margin-bottom: 60px;
+}
+h4{
+  font-size: 28px;
+
+}
+
+/*------------ main ------------*/
+.main-visual {
+  width: 100%;
+  min-width: 1000px;
+  height: 0;
+  /* 表示画像の高さ ÷ 表示画像の幅 × 100 */
+  padding-top: 51.46%;
+  background: url(img/main-visual.png) no-repeat;
+  background-size: contain;
+  position: relative;
+  margin-bottom: 60px;
+  @include pc {
+    height: 500px;
+    padding: 0;
+  }
+  p {
+    position: absolute;
+    color: #fff;
+    font-size: 32px;
+    top: 8%;
+    left: 50%;
+    line-height: 1.8;
+  }
+}
+
+.about {
+  .about-title {
+    text-align: center;
+    line-height: 1.8;
+    letter-spacing: 1.4px;
+    .logo {
+      margin-bottom: 60px;
+    }
+    .about-title-b {
+      color: #fff;
+      background-color: $base-blue;
+      width: 40%;
+      padding: 25px 60px;
+      margin: 0 auto;
+      h1 {
+        font-size: 26px;
+        span {
+          font-size: 36px;
+        }
+      }
+    }
+    .about-title-y {
+      color: $base-blue;
+      background-color: $base-yellow;
+      width: 40%;
+      padding: 25px 60px;
+      margin: 0 auto 30px;
+      h2 {
+        font-size: 26px;
+      }
+    }
+    .text-grey {
+      color: #727171;
+      font-size: 24px;
+      margin-bottom: 90px;
+    }
+    .text-box {
+      font-size: 18px;
+      margin: 60px 0;
+      line-height: 40px;
+    }
+  }
+
+  .about-box {
+    display: flex;
+    justify-content: space-around;
+    .about-box-item {
+      width: 320px;
+      background-color: $base-blue;
+    }
+  }
 }
