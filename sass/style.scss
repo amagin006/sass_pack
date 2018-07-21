@@ -39,7 +39,7 @@ span {
 $pc: 1000px;
 $sp: 768px;
 @mixin pc {
-  @media screen and (max-width: ($pc)) {
+  @media screen and (min-width: ($pc)) {
     @content;
   }
 }
@@ -58,20 +58,21 @@ $base-yellow: #FFF57F;
     display:block;
     clear:both;
 }
-
 /*------------  common ------------*/
 html,
 body {
-	width: 100%;
+  width: 100%;
+  min-width: 1020px;
 	font-size: 16px;
 	font-family: -apple-system, "Helvetica Neue", "Hiragino Kaku Gothic ProN", "游ゴシック Medium", "メイリオ", meiryo, sans-serif;
 	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 .wrapper {
   width: 1000px;
+
   margin: 0 auto;
-  padding: 0 15px;
+  box-sizing: border-box;
 }
 
 h3 {
@@ -86,18 +87,15 @@ h4{
 
 /*------------ main ------------*/
 .main-visual {
-  width: 100%;
-  min-width: 1000px;
-  height: 0;
-  /* 表示画像の高さ ÷ 表示画像の幅 × 100 */
-  padding-top: 51.46%;
+    /* 表示画像の高さ ÷ 表示画像の幅 × 100 */
+  padding-top: 51.86%;
   background: url(img/main-visual.png) no-repeat;
-  background-size: contain;
+  background-size: cover;
   position: relative;
   margin-bottom: 60px;
   @include pc {
-    height: 500px;
-    padding: 0;
+    width: 100%;
+    height: 0;
   }
   p {
     position: absolute;
@@ -110,6 +108,7 @@ h4{
 }
 
 .about {
+  margin-bottom: 80px;
   .about-title {
     text-align: center;
     line-height: 1.8;
@@ -158,6 +157,107 @@ h4{
     .about-box-item {
       width: 320px;
       background-color: $base-blue;
+      position: relative;
+      .about-box-icon {
+        position: absolute;
+        top: -45px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 50%;
+        border: 3px solid #fff;
+        background-color: $base-blue;
+        width: 90px;
+        height: 90px;
+        img {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          margin: auto;
+        }
+      }
+      h5 {
+        padding-top: 50px;
+        font-size: 36px;
+        color: $base-yellow;
+        text-align: center;
+        line-height: 1.6;
+      }
+      .ballon {
+        position: absolute;
+        top: 50px;
+        left: 20px;
+      }
+      p {
+        text-align: center;
+        padding: 20px 16px;
+        color: #fff;
+        line-height: 30px;
+      }
     }
+  }
+}
+
+.slide-sec {
+  img {
+    width: 100%;
+    margin-bottom: 120px;
+    @include pc {
+      width: 100%;
+    }
+  }
+}
+
+.member-sec {
+  h3 {
+    text-align: center;
+    span {
+      font-size: 17px;
+    }
+  }
+  .member-item {
+    .member-contents {
+      padding: 30px 10px;
+      display: flex;
+      width: 980px;
+      margin: 0 auto;
+      color: #fff;
+      box-sizing: border-box;
+      .name {
+        font-size: 23px;
+        margin-bottom: 20px;
+      }
+      .position {
+        li {
+          margin: 10px 0;
+        }
+      }
+      .profile {
+        .profile-title {
+          margin: 20px 0;
+        }
+        p {
+          line-height: 28px;
+        }
+      }
+    }
+    .member-left {
+      img {
+        margin-right: 60px;
+      }
+    }
+    .member-right {
+      flex-direction: row-reverse;
+      img {
+        margin-left: 60px;
+      }
+    }
+  }
+  .member-item:nth-child(even) {
+    background-color: $base-blue;
+  }
+  .member-item:nth-child(odd) {
+    background-color: #5C83AE;
   }
 }

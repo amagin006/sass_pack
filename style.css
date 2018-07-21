@@ -127,6 +127,7 @@ span {
 html,
 body {
   width: 100%;
+  min-width: 1020px;
   font-size: 16px;
   font-family: -apple-system, "Helvetica Neue", "Hiragino Kaku Gothic ProN", "游ゴシック Medium", "メイリオ", meiryo, sans-serif;
   -webkit-box-sizing: border-box;
@@ -136,7 +137,7 @@ body {
 .wrapper {
   width: 1000px;
   margin: 0 auto;
-  padding: 0 15px;
+  box-sizing: border-box;
 }
 
 h3 {
@@ -152,13 +153,10 @@ h4 {
 /*------------ main ------------*/
 
 .main-visual {
-  width: 100%;
-  min-width: 1000px;
-  height: 0;
   /* 表示画像の高さ ÷ 表示画像の幅 × 100 */
-  padding-top: 51.46%;
+  padding-top: 51.86%;
   background: url(img/main-visual.png) no-repeat;
-  background-size: contain;
+  background-size: cover;
   position: relative;
   margin-bottom: 60px;
 }
@@ -170,6 +168,10 @@ h4 {
   top: 8%;
   left: 50%;
   line-height: 1.8;
+}
+
+.about {
+  margin-bottom: 80px;
 }
 
 .about .about-title {
@@ -230,11 +232,117 @@ h4 {
 .about .about-box .about-box-item {
   width: 320px;
   background-color: #2D6199;
+  position: relative;
 }
 
-@media screen and (max-width: 1000px) {
+.about .about-box .about-box-item .about-box-icon {
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  border: 3px solid #fff;
+  background-color: #2D6199;
+  width: 90px;
+  height: 90px;
+}
+
+.about .about-box .about-box-item .about-box-icon img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.about .about-box .about-box-item h5 {
+  padding-top: 50px;
+  font-size: 36px;
+  color: #FFF57F;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.about .about-box .about-box-item .ballon {
+  position: absolute;
+  top: 50px;
+  left: 20px;
+}
+
+.about .about-box .about-box-item p {
+  text-align: center;
+  padding: 20px 16px;
+  color: #fff;
+  line-height: 30px;
+}
+
+.slide-sec img {
+  width: 100%;
+  margin-bottom: 120px;
+}
+
+.member-sec h3 {
+  text-align: center;
+}
+
+.member-sec h3 span {
+  font-size: 17px;
+}
+
+.member-sec .member-item .member-contents {
+  padding: 30px 10px;
+  display: flex;
+  width: 980px;
+  margin: 0 auto;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.member-sec .member-item .member-contents .name {
+  font-size: 23px;
+  margin-bottom: 20px;
+}
+
+.member-sec .member-item .member-contents .position li {
+  margin: 10px 0;
+}
+
+.member-sec .member-item .member-contents .profile .profile-title {
+  margin: 20px 0;
+}
+
+.member-sec .member-item .member-contents .profile p {
+  line-height: 28px;
+}
+
+.member-sec .member-item .member-left img {
+  margin-right: 60px;
+}
+
+.member-sec .member-item .member-right {
+  flex-direction: row-reverse;
+}
+
+.member-sec .member-item .member-right img {
+  margin-left: 60px;
+}
+
+.member-sec .member-item:nth-child(even) {
+  background-color: #2D6199;
+}
+
+.member-sec .member-item:nth-child(odd) {
+  background-color: #5C83AE;
+}
+
+@media screen and (min-width: 1000px) {
   .main-visual {
-    height: 500px;
-    padding: 0;
+    width: 100%;
+    height: 0;
+  }
+
+  .slide-sec img {
+    width: 100%;
   }
 }
