@@ -144,6 +144,7 @@ h3 {
   font-size: 30px;
   color: #2D6199;
   margin-bottom: 60px;
+  text-align: center;
 }
 
 h4 {
@@ -282,8 +283,8 @@ h4 {
   margin-bottom: 120px;
 }
 
-.member-sec h3 {
-  text-align: center;
+.member-sec {
+  margin-bottom: 90px;
 }
 
 .member-sec h3 span {
@@ -334,6 +335,124 @@ h4 {
 
 .member-sec .member-item:nth-child(odd) {
   background-color: #5C83AE;
+}
+
+.qa-sec {
+  margin-bottom: 90px;
+  font-size: 18px;
+}
+
+.qa-sec .accordion {
+  width: 785px;
+  margin: 0 auto;
+  /*＋、－切り替え*/
+}
+
+.qa-sec .accordion p.qa-num {
+  display: inline-block;
+  float: left;
+  background-color: #2D6199;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  text-align: center;
+  line-height: 40px;
+}
+
+.qa-sec .accordion p.qa-ques {
+  display: inline-block;
+  padding-top: 5px;
+}
+
+.qa-sec .accordion dt {
+  cursor: pointer;
+  border: solid 1px #ccc;
+  padding: 40px 15px 40px 40px;
+}
+
+.qa-sec .accordion dt .accordion_icon {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  float: right;
+  margin-right: 5px;
+  display: inline-block;
+  transition: all .4s;
+  box-sizing: border-box;
+}
+
+.qa-sec .accordion dt .accordion_icon span {
+  display: inline-block;
+  transition: all .4s;
+  box-sizing: border-box;
+  position: absolute;
+  left: 6px;
+  width: 50%;
+  height: 2px;
+  background-color: #898989;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.qa-sec .accordion dt .accordion_icon span:nth-of-type(1) {
+  top: 10px;
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+}
+
+.qa-sec .accordion dt .accordion_icon span:nth-of-type(2) {
+  top: 10px;
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+}
+
+.qa-sec .accordion dt.active span:nth-of-type(1) {
+  display: none;
+}
+
+.qa-sec .accordion dt.active span:nth-of-type(2) {
+  top: 10px;
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+}
+
+.qa-sec .accordion dd {
+  display: none;
+  line-height: 140%;
+  margin: 0;
+  padding: 40px 20px 40px 40px;
+  border-right: solid 1px #ccc;
+  border-left: solid 1px #ccc;
+}
+
+.qa-sec .accordion dd p.qa-num {
+  background-color: #C72B2B;
+}
+
+.qa-sec .accordion dd p.qa-answer {
+  overflow: auto;
+  line-height: 30px;
+}
+
+.qa-sec .accordion dd:last-child {
+  border-bottom: solid 1px #ccc;
+}
+
+.qa-sec .accordion dt.over {
+  background-color: #CCC;
 }
 
 @media screen and (min-width: 1000px) {

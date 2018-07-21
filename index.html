@@ -135,12 +135,76 @@
         </div>
       </div><!-- wrapper -->
     </div><!-- member-item -->
-  </div>
+  </div><!-- member-sec -->
 
+  <div class="qa-sec">
+    <h3>Q&amp;A</h3>
+    <dl id="accordion" class="accordion">
+      <dt><p class="qa-num cf">Q1</p>
+          <p class="qa-ques">どんな人がマルニコーポレーションに向いていますか？</p>
+          <p class="accordion_icon"><span></span><span></span></p>
+      </dt>
+      <dd><p class="qa-num cf">A1</p>
+          <p class="qa-answer">ここにテキストがはいります。ここにテキストがはいります。
+          ここにテキストがはいります。ここにテキストがはいります。
+          ここにテキストがはいります。</p>
+    　</dd>
+    
+      <dt><p class="qa-num cf">Q2</p>
+          <p class="qa-ques">現場での経験がなくても大丈夫でしょうか</p>
+          <p class="accordion_icon"><span></span><span></span></p>
+      </dt>
+      <dd><p class="qa-num cf">A2</p>
+          <p class="qa-answer">ここにテキストがはいります。ここにテキストがはいります。
+          ここにテキストがはいります。ここにテキストがはいります。
+          ここにテキストがはいります。</p>
+    　</dd>
+
+      <dt><p class="qa-num cf">Q3</p>
+          <p class="qa-ques">重量物の搬入・据付の仕事で重要視することは何ですか？</p>
+          <p class="accordion_icon"><span></span><span></span></p>
+      </dt>
+      <dd><p class="qa-num cf">A3</p>
+          <p class="qa-answer">ここにテキストがはいります。ここにテキストがはいります。
+          ここにテキストがはいります。ここにテキストがはいります。
+          ここにテキストがはいります。</p>
+    　</dd>
+
+      <dt><p class="qa-num cf">Q4</p>
+        <p class="qa-ques">〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</p>
+          <p class="accordion_icon"><span></span><span></span></p>
+      </dt>
+      <dd><p class="qa-num cf">A4</p>
+          <p class="qa-answer">ここにテキストがはいります。ここにテキストがはいります。
+          ここにテキストがはいります。ここにテキストがはいります。
+          ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。
+          ここにテキストがはいります。ここにテキストがはいります。
+          ここにテキストがはいります。</p>
+    　</dd>
+    </dl>
+  </div>
 </main>
 
 <footer>
 
 </footer>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+
+<script>
+  jQuery(function(){
+    $("#accordion dt").on("click", function() {
+        $(this).next().slideToggle();
+        $(this).toggleClass("active");
+    });
+    $("#accordion dt").mouseover(function(){
+      $(this).addClass("over");   
+    });
+    $("#accordion dt").mouseout(function(){
+        $(this).removeClass("over");    
+    });
+  });
+</script>
+
 </body>
 </html>
