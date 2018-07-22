@@ -9,7 +9,7 @@
 </head>
 <body>
 <header>
-  <div class="main-visual">
+  <div class="main-visual" id="top">
     <p>AIがどんなに進歩しても<br>
     決して立ち入ることのできない<br>
     領域があります。<br>
@@ -354,10 +354,73 @@
     </div><!-- wrapper -->
   </div><!-- recruit-sec -->
 
+  <div class="company-sec">
+    <div class="wrapper">
+      <h3>COMPANY<br><span>会社概要</span></h3>
+
+      <div class="company-list">
+        <dl>
+          <dt><p>会社名</p></dt>
+          <dd>株式会社 マルニコーポレーション</dd>
+          
+          <dt><p>設立</p></dt>
+          <dd>昭和24年7月28日</dd>
+          
+          <dt><p>資本金</p></dt>
+          <dd>30,000千円</dd>
+          
+          <dt><p>代表者</p></dt>
+          <dd>代表取締役社長<br>
+              中西　富貴雄</dd>
+          
+          <dt><p>従業員数</p></dt>
+          <dd>80名<br>
+              ※2018年6月時点</dd>
+          
+          <dt><p>売上高</p></dt>
+          <dd>20億3761万円（2017年3月実績）<br>
+              19億4999万円（2016年3月実績）<br>
+              17億9518万円（2015年3月実績）</dd>
+          
+          <dt><p>事業内容</p></dt>
+          <dd>一般建設業（印刷・製本・紙工機械・食品機械・工作機械及び産業機械などの機械設備設置工事業、鳶・土木工事業）、倉庫業務（機械類中心）など</dd>
+          
+          <dt><p>事業所</p></dt>
+          <dd>本社　大阪府寝屋川市池田2-11-67 <br>
+              東京事業所　東京都大田区京浜島3-4-5 <br>
+              大阪事業所　大阪府寝屋川市池田2-11-67 <br>
+              九州事業所　福岡県福岡市東区松島5-16-10</dd>
+
+        </dl>
+      </div><!-- company-list -->
+    </div><!-- wrapper -->
+  </div><!-- company-sec -->
+
+  <div class="access-sec">
+    <h3>ACCESS</h3>
+    <div class="address">
+      <p>大阪府寝屋川市池田2-11-67</p>
+      <a href="http://www.0202.co.jp">http://www.0202.co.jp</a>
+      <p class="tel">Tel  <a href="tel:072-827-1136">072-827-1136</a></p>
+    </div>
+  </div>
+
+  <div class="map-sec">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6554.403536462299!2d135.61415291161066!3d34.77569556175764!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x89c4aac0be028b6a!2z77yI5qCq77yJ44Oe44Or44OL44Kz44O844Od44Os44O844K344On44OzIOacrOekvg!5e0!3m2!1sja!2sca!4v1532226782079" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+  </div>
+
+  <div class="logo">
+    <img src="img/logo01.png" alt="marui">
+  </div>
+
+
 </main>
 
 <footer>
-
+  <div class="wrapper">
+    <div class="copyright">Copyright（C）2007 MARUNI CORPORATION. All Rights Reserved.</div>
+    <p class="pagetop"><a href="#top">PAGE<br>TOP</a></p>
+  </div>
 </footer>
 
 <script src="js/jquery-3.3.1.min.js"></script>
@@ -374,6 +437,32 @@
     $("#accordion dt").mouseout(function(){
         $(this).removeClass("over");    
     });
+  });
+
+// PC時のtel無効
+  var ua = navigator.userAgent.toLowerCase();
+  var isMobile = /iphone/.test(ua)||/android(.+)?mobile/.test(ua);
+
+  if (!isMobile) {
+      $('a[href^="tel:"]').on('click', function(e) {
+          e.preventDefault();
+      });
+  }
+
+  //PAGETOP へ戻る
+  jQuery(document).ready(function() {
+  var pagetop = $('.pagetop');
+    $(window).scroll(function () {
+       if ($(this).scrollTop() > 100) {
+            pagetop.fadeIn();
+       } else {
+            pagetop.fadeOut();
+            }
+       });
+       pagetop.click(function () {
+           $('body, html').animate({ scrollTop: 0 }, 500);
+              return false;
+   });
   });
 </script>
 
