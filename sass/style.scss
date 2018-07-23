@@ -38,8 +38,9 @@ span {
 
 $pc: 1000px;
 $sp: 768px;
+$sp-s: 480px;
 @mixin pc {
-  @media screen and (min-width: ($pc)) {
+  @media screen and (max-width: ($pc)) {
     @content;
   }
 }
@@ -48,16 +49,16 @@ $sp: 768px;
       @content;
     }
 }
+@mixin sp-s {
+    @media screen and (max-width: ($sp-s)) {
+      @content;
+    }
+}
 
 
 $base-blue: #2D6199;
 $base-yellow: #FFF57F;
 
-.cf:after {
-    content:" ";
-    display:block;
-    clear:both;
-}
 /*------------  common ------------*/
 html,
 body {
@@ -67,12 +68,19 @@ body {
 	font-family: -apple-system, "Helvetica Neue", "Hiragino Kaku Gothic ProN", "游ゴシック Medium", "メイリオ", meiryo, sans-serif;
 	-webkit-box-sizing: border-box;
   box-sizing: border-box;
+  @include sp {
+    min-width: inherit;
+    min-width: auto;
+    overflow-x: hidden;
+  }
 }
 .wrapper {
   width: 1000px;
-
   margin: 0 auto;
   box-sizing: border-box;
+  @include sp {
+    width: 90%;
+  }
 }
 
 h3 {
@@ -90,6 +98,17 @@ h4{
 
 a {text-decoration: none;}
 
+.cf::after {
+  content:" ";
+  display:block;
+  clear:both;
+}
+
+.sp-none {
+  @include sp {
+    display: none;
+  }
+}
 /*------------ main ------------*/
 .main-visual {
     /* 表示画像の高さ ÷ 表示画像の幅 × 100 */
@@ -109,6 +128,12 @@ a {text-decoration: none;}
     top: 8%;
     left: 50%;
     line-height: 1.8;
+    @include sp {
+      font-size: 22px;
+    }
+    @include sp-s {
+      font-size: 16px;
+    }
   }
 }
 
@@ -131,8 +156,14 @@ a {text-decoration: none;}
       margin: 0 auto;
       h1 {
         font-size: 26px;
+        @include sp {
+          font-size: 20px;
+        }
         span {
           font-size: 36px;
+          @include sp {
+            font-size: 26px;
+          }
         }
       }
     }
@@ -144,6 +175,9 @@ a {text-decoration: none;}
       margin: 0 auto 30px;
       h2 {
         font-size: 26px;
+        @include sp {
+          font-size: 20px;
+        }
       }
     }
     .text-grey {
@@ -161,10 +195,18 @@ a {text-decoration: none;}
   .about-box {
     display: flex;
     justify-content: space-around;
+    @include  sp {
+      flex-direction: column;
+    }
     .about-box-item {
       width: 320px;
       background-color: $base-blue;
       position: relative;
+      @include sp {
+        width: 100%;
+        padding: 0px 500%;
+        margin: 0px -500% 80px;
+      }
       .about-box-icon {
         position: absolute;
         top: -45px;
@@ -206,12 +248,36 @@ a {text-decoration: none;}
   }
 }
 
+
 .slide-sec {
-  img {
+  margin: 0 auto 80px;
+  width: 100%;
+  height: 400px;
+  text-align: left;
+  overflow: hidden;
+  ul {
     width: 100%;
-    margin-bottom: 120px;
-    @include pc {
-      width: 100%;
+    height: 400px;
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+    li {
+      top: 0;
+      left: 0;
+      height: 400px;
+      display: none;
+      position: absolute;
+    }
+  }
+  .slide1 {
+    li {
+      width: 347px;
+    }
+  }
+  .slide2 {
+    li {
+      left: 347px;
+      width: 347px;
     }
   }
 }
@@ -221,8 +287,6 @@ a {text-decoration: none;}
   .member-item {
     .member-contents {
       padding: 30px 10px;
-      display: flex;
-      width: 980px;
       margin: 0 auto;
       color: #fff;
       box-sizing: border-box;
@@ -236,6 +300,9 @@ a {text-decoration: none;}
         }
       }
       .profile {
+        @include sp {
+            clear: both;
+        }
         .profile-title {
           margin: 20px 0;
         }
@@ -243,16 +310,30 @@ a {text-decoration: none;}
           line-height: 28px;
         }
       }
+      @include sp {
+        img {
+          width: 40%;
+          margin-bottom: 20px;
+          min-width: 200px;
+        }
+      }
     }
     .member-left {
       img {
+        float: left;
         margin-right: 60px;
+        @include sp {
+          margin-right: 30px;
+        }
       }
     }
     .member-right {
-      flex-direction: row-reverse;
       img {
         margin-left: 60px;
+        float: right;
+        @include sp {
+          margin-left: 30px;
+        }
       }
     }
   }
@@ -584,20 +665,19 @@ footer {
     position: relative;
   }
   .pagetop {
-    position: absolute;
-    top: -40px;
-    right: 60px;
-    background-color: $base-blue;
-    border-radius: 50%;
-    width: 76px;
-    height: 76px;
-    border: 3px solid #fff;
     a {
+      top: 0px;
+      right: 60px;
+      background-color: $base-blue;
+      border-radius: 50%;
+      padding: 17px 14px;
+      // width: 76px;
+      // height: 76px;
+      margin: auto 0;
       color: #fff;
       text-align: center;
       position: absolute;
-      top: 50%;
-      left: 50%;
+      border: 3px solid #fff;
       transform : translate(-50%,-50%);
     }
   }

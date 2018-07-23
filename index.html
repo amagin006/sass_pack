@@ -43,8 +43,7 @@
         <div class="text-box">
           <p>マルニコーポレーションは「重量物設置」のパイオニアとして創業以来70年黒字経営を続けています。<br>
               工場、物流センターなど大型機械の入れ替えや新規設置など日本の生産現場には欠かせない役割を担っています。<br>
-              創業以来、バブル崩壊やリーマンショックなど様々な不況をものともせず成長を続けてこれたのは、<br>
-              「確かな技術力」にあります。機械設備は数年に一度、必ず入れ替えがあり、<br>そのニーズはなくなることはありません。<br>
+              創業以来、バブル崩壊やリーマンショックなど様々な不況をものともせず成長を続けてこれたのは、<br class="sp-none">「確かな技術力」にあります。機械設備は数年に一度、必ず入れ替えがあり、<br class="sp-none">そのニーズはなくなることはありません。<br>
               ただ、安全性を何よりも重視するため、簡単に参入できる業種ではありません。<br>
               長年培ってきた技術力によってお客様の信頼を得て現在に至っています。<br>
               常に業界のトップランナーとして走り続け、次の100年を目指し、さらなる技術力を磨いていきます。</p>
@@ -91,14 +90,15 @@
     </div><!-- wrapper -->
   </div><!-- about -->
 
-  <div class="slide-sec">
+  <div id="slide" class="slide-sec">
     <img src="img/top-img001.png" alt="">
   </div>
+      
 
   <div class="member-sec">
     <h3>MEMBER<br><span>社員紹介</span></h3>
     <div class="member-item">
-      <div class="member-contents member-left">
+      <div class="member-contents member-left wrapper cf">
         <img src="img/member01.png" alt="">
         <div class="member-detail">
           <p class="name">山田　太郎</p>
@@ -109,15 +109,15 @@
               <li>入社何年目</li>
             </ul>
           </div>
-          <div class="profile">
-            <div class="profile-title">PROFILE</div>
-            <p>ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。</p>
-          </div>
+        </div>
+        <div class="profile">
+          <div class="profile-title">PROFILE</div>
+          <p>ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。</p>
         </div>
       </div><!-- wrapper -->
     </div><!-- member-item -->
     <div class="member-item">
-      <div class="member-contents member-right">
+      <div class="member-contents member-right wrapper cf">
         <img src="img/member01.png" alt="">
         <div class="member-detail">
           <p class="name">山田　太郎</p>
@@ -128,10 +128,10 @@
               <li>入社何年目</li>
             </ul>
           </div>
-          <div class="profile">
-            <div class="profile-title">PROFILE</div>
-            <p>ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。</p>
-          </div>
+        </div>
+        <div class="profile">
+          <div class="profile-title">PROFILE</div>
+          <p>ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。ここにテキストがはいります。</p>
         </div>
       </div><!-- wrapper -->
     </div><!-- member-item -->
@@ -424,47 +424,6 @@
 </footer>
 
 <script src="js/jquery-3.3.1.min.js"></script>
-
-<script>
-  jQuery(function(){
-    $("#accordion dt").on("click", function() {
-        $(this).next().slideToggle();
-        $(this).toggleClass("active");
-    });
-    $("#accordion dt").mouseover(function(){
-      $(this).addClass("over");   
-    });
-    $("#accordion dt").mouseout(function(){
-        $(this).removeClass("over");    
-    });
-  });
-
-// PC時のtel無効
-  var ua = navigator.userAgent.toLowerCase();
-  var isMobile = /iphone/.test(ua)||/android(.+)?mobile/.test(ua);
-
-  if (!isMobile) {
-      $('a[href^="tel:"]').on('click', function(e) {
-          e.preventDefault();
-      });
-  }
-
-  //PAGETOP へ戻る
-  jQuery(document).ready(function() {
-  var pagetop = $('.pagetop');
-    $(window).scroll(function () {
-       if ($(this).scrollTop() > 100) {
-            pagetop.fadeIn();
-       } else {
-            pagetop.fadeOut();
-            }
-       });
-       pagetop.click(function () {
-           $('body, html').animate({ scrollTop: 0 }, 500);
-              return false;
-   });
-  });
-</script>
-
+<script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
