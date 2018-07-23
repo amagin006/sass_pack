@@ -272,12 +272,11 @@ a {
   color: #FFF57F;
   text-align: center;
   line-height: 1.6;
+  position: relative;
 }
 
-.about .about-box .about-box-item .ballon {
-  position: absolute;
-  top: 50px;
-  left: 20px;
+.about .about-box .about-box-item .ballon000 {
+  background: url(img/ballon01.png) no-repeat top 45% left 10%;
 }
 
 .about .about-box .about-box-item p {
@@ -378,7 +377,6 @@ a {
 }
 
 .qa-sec .accordion p.qa-num {
-  display: inline-block;
   float: left;
   background-color: #2D6199;
   color: #fff;
@@ -406,7 +404,6 @@ a {
   height: 30px;
   float: right;
   margin-right: 5px;
-  display: inline-block;
   transition: all .4s;
   box-sizing: border-box;
 }
@@ -428,7 +425,7 @@ a {
 }
 
 .qa-sec .accordion dt .accordion_icon span:nth-of-type(1) {
-  top: 10px;
+  top: 15px;
   transform: rotate(0deg);
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -437,7 +434,7 @@ a {
 }
 
 .qa-sec .accordion dt .accordion_icon span:nth-of-type(2) {
-  top: 10px;
+  top: 15px;
   transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
@@ -450,7 +447,7 @@ a {
 }
 
 .qa-sec .accordion dt.active span:nth-of-type(2) {
-  top: 10px;
+  top: 15px;
   transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
@@ -463,7 +460,7 @@ a {
   line-height: 140%;
   margin: 0;
   padding: 40px 20px 40px 40px;
-  border-right: solid 1px #ccc;
+  border-right: solid 1px #080404;
   border-left: solid 1px #ccc;
 }
 
@@ -528,12 +525,10 @@ a {
 
 .recruit-sec .ballon2 {
   width: 500px;
-  height: 90px;
   margin: 0 auto 65px;
   background-color: #2B5D92;
   color: #fff;
   text-align: center;
-  line-height: 90px;
   position: relative;
 }
 
@@ -542,13 +537,14 @@ a {
   width: 77px;
   height: 55px;
   right: 80px;
-  background-image: url(img/arrow3.png);
+  background-image: url(img/arrow03.png);
   background-repeat: no-repeat;
   background-size: contain;
 }
 
 .recruit-sec .ballon2 p {
   font-size: 26px;
+  padding: 40px 10px;
 }
 
 .recruit-sec .recruit-list {
@@ -556,13 +552,14 @@ a {
 }
 
 .recruit-sec .recruit-list ul li {
-  width: 600px;
+  width: 700px;
   margin: 0 auto;
   font-size: 26px;
   line-height: 40px;
   padding-left: 50px;
   background: url(img/check01.png) no-repeat;
   background-position: left center;
+  box-sizing: border-box;
 }
 
 .application {
@@ -605,6 +602,7 @@ a {
 .company-list dd {
   width: 75%;
   padding-right: 10px;
+  padding-left: 10px;
   box-sizing: border-box;
 }
 
@@ -653,28 +651,33 @@ a {
   padding: 0 10px;
 }
 
-.entry .entry-flow .entry-flow-item:nth-child(1):after,
-.entry .entry-flow .entry-flow-item:nth-child(2):after,
-.entry .entry-flow .entry-flow-item:nth-child(3):after {
+.entry .entry-flow .entry-arrow::after {
   content: "";
   position: absolute;
-  top: 50%;
-  right: -40px;
+  top: 45%;
+  right: -23%;
   background-image: url(img/arrow01.png);
   width: 11px;
   height: 23px;
 }
 
+.entry .entry-flow .sp-arrow {
+  display: none;
+}
+
 .entry .entry-btn {
   text-align: center;
+  width: 40%;
+  margin: 0 auto;
 }
 
 .entry .entry-btn a {
   display: inline-block;
   color: #fff;
+  width: 100%;
   background-color: #2D6199;
   font-size: 30px;
-  padding: 20px 70px;
+  padding: 20px 0;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -745,7 +748,6 @@ footer .pagetop a {
   background-color: #2D6199;
   border-radius: 50%;
   padding: 17px 14px;
-  margin: auto 0;
   color: #fff;
   text-align: center;
   position: absolute;
@@ -769,7 +771,7 @@ footer .pagetop a {
   }
 
   .wrapper {
-    width: 90%;
+    width: 95%;
   }
 
   .sp-none {
@@ -792,14 +794,22 @@ footer .pagetop a {
     font-size: 20px;
   }
 
+  .about .about-title .text-box {
+    padding: 0 10px;
+  }
+
   .about .about-box {
     flex-direction: column;
   }
 
   .about .about-box .about-box-item {
     width: 100%;
-    padding: 0px 500%;
-    margin: 0px -500% 80px;
+    padding: 0px 200%;
+    margin: 0px -200% 80px;
+  }
+
+  .about .about-box .about-box-item .ballon000 {
+    background-position: top 45% left 24%;
   }
 
   .member-sec .member-item .member-contents .profile {
@@ -819,10 +829,157 @@ footer .pagetop a {
   .member-sec .member-item .member-right img {
     margin-left: 30px;
   }
+
+  .qa-sec .accordion {
+    width: 100%;
+  }
+
+  .qa-sec .accordion p.qa-ques {
+    width: 70%;
+  }
+
+  .qa-sec .accordion dd,
+  .qa-sec .accordion dt {
+    padding: 40px 15px;
+  }
+
+  .benefits .bene-card .bene-card-item {
+    width: 49%;
+    padding-top: 30px;
+  }
+
+  .recruit-sec .ballon2 {
+    width: 90%;
+  }
+
+  .recruit-sec .recruit-list ul li {
+    width: 90%;
+    margin-bottom: 10px;
+    font-size: 24px;
+    background-position: left top 8px;
+  }
+
+  .application {
+    padding: 0 0 20px;
+  }
+
+  .application dt,
+  .application dd,
+  .company-list dt,
+  .company-list dd {
+    width: 100%;
+  }
+
+  .application dl,
+  .company-list dl {
+    flex-direction: column;
+  }
+
+  .application dt,
+  .company-list dt {
+    display: block;
+    text-align: center;
+    background: #f4f4f4;
+  }
+
+  .application dt p,
+  .company-list dt p {
+    padding-left: 0;
+  }
+
+  .application dd,
+  .company-list dd {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  .application dd ul li,
+  .company-list dd ul li {
+    width: 100%;
+  }
+
+  .entry .entry-flow {
+    flex-wrap: wrap;
+  }
+
+  .entry .entry-flow .entry-flow-item {
+    width: 40%;
+    padding: 5% 2%;
+    margin: 40px 0;
+  }
+
+  .entry .entry-flow .entry-arrow::after {
+    right: -17%;
+  }
+
+  .entry .entry-flow .sp-arrow {
+    display: block;
+    background: url(img/arrow02.jpg) no-repeat center;
+    background-size: contain;
+    width: 100%;
+    height: 78px;
+    margin: 0 auto;
+  }
+
+  .entry .entry-btn {
+    width: 60%;
+  }
+
+  .entry .entry-btn a {
+    font-size: 22px;
+  }
+
+  .company-list dl {
+    width: 100%;
+  }
+
+  footer .copyright {
+    padding: 45px 0 25px;
+  }
+
+  footer .pagetop a {
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .entry .entry-flow .sp-arrow {
+    height: 60px;
+  }
 }
 
 @media screen and (max-width: 480px) {
   .main-visual p {
     font-size: 16px;
+  }
+
+  .about .about-box .about-box-item .ballon000 {
+    background-position: top 45% left 17%;
+  }
+
+  .recruit-sec .ballon2 p {
+    font-size: 20px;
+  }
+
+  .entry .entry-flow .entry-flow-item {
+    width: 40%;
+    padding: 0 2%;
+    margin: 40px 0;
+  }
+
+  .entry .entry-flow .entry-flow-item .entry-title {
+    font-size: 20px;
+  }
+
+  .entry .entry-flow .entry-flow-item p {
+    font-size: 15px;
+  }
+
+  .entry .entry-flow .entry-arrow::after {
+    right: -20%;
+  }
+
+  .entry .entry-flow .sp-arrow {
+    height: 50px;
   }
 }
