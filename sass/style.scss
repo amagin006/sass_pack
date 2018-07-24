@@ -633,6 +633,7 @@ a {text-decoration: none;}
       flex-wrap: wrap;
     }
     .entry-flow-item {
+      position: relative;
       background: #5D83AD;
       color: #fff;
       border-radius: 50%;
@@ -642,16 +643,19 @@ a {text-decoration: none;}
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      position: relative;
       @include sp {
-        width: 40%;
-        padding: 5% 2%;
-        margin: 40px 0;
+        width: 0;
+        height: 0;
+        padding: 22%;
+        margin: 20px 0;
       }
-      @include sp-s {
-        width: 40%;
-        padding: 0 2%;
-        margin: 40px 0;
+      .entry-flow-text {
+        position: absolute;
+        left: 0;
+        top: 25%;
+        width: 100%;
+        text-align: center;
+        color: #fff;
       }
       .entry-title {
         font-size: 29px;
@@ -662,6 +666,14 @@ a {text-decoration: none;}
       p {
         text-align: center;
         padding: 0 10px;
+        @include sp {
+          font-size: 20px;
+          padding-top: 10px; 
+        }
+        @media screen and (max-width: 600px) {
+          font-size: 18px;
+          padding-top: 0;
+        }
         @include sp-s {
           font-size: 15px;
         }
