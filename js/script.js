@@ -39,3 +39,11 @@ var pagetop = $('.pagetop');
 });
 
 //slideのクロスフィード
+$(function() {
+    $("#slides").responsiveSlides({
+        auto: true,
+        speed: 500,
+        timeout: 3000,
+        random: true,
+    });
+});

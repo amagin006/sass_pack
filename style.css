@@ -286,37 +286,36 @@ a {
   line-height: 30px;
 }
 
-.slide-sec {
-  margin: 0 auto 80px;
-  width: 100%;
-  height: 400px;
-  text-align: left;
-  overflow: hidden;
-}
-
-.slide-sec ul {
-  width: 100%;
-  height: 400px;
-  text-align: left;
-  overflow: hidden;
+.rslides {
   position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0 0 120px;
 }
 
-.slide-sec ul li {
-  top: 0;
-  left: 0;
-  height: 400px;
-  display: none;
+.rslides li {
+  -webkit-backface-visibility: hidden;
   position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
 }
 
-.slide-sec .slide1 li {
-  width: 347px;
+.rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left;
 }
 
-.slide-sec .slide2 li {
-  left: 347px;
-  width: 347px;
+.rslides img {
+  display: block;
+  height: auto;
+  float: left;
+  width: 100%;
+  border: 0;
 }
 
 .member-sec {
@@ -782,6 +781,10 @@ footer .pagetop a {
     font-size: 22px;
   }
 
+  .about {
+    margin-bottom: 0;
+  }
+
   .about .about-title .about-title-b h1 {
     font-size: 20px;
   }
@@ -810,6 +813,10 @@ footer .pagetop a {
 
   .about .about-box .about-box-item .ballon000 {
     background-position: top 45% left 24%;
+  }
+
+  .rslides {
+    margin-bottom: 80px;
   }
 
   .member-sec .member-item .member-contents .profile {
